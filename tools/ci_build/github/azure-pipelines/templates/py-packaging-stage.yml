@@ -787,6 +787,7 @@ stages:
 
       - script: |
           set -ex
+          uname -m
           system_profiler SPSoftwareDataType SPHardwareDataType
         displayName: 'Mac machine info'
 
