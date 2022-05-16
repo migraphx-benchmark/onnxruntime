@@ -764,13 +764,11 @@ stages:
       pool:
         vmImage: 'macOS-11'
       variables:
-        MACOSX_DEPLOYMENT_TARGET: '10.14'
+        MACOSX_DEPLOYMENT_TARGET: '11.0'
       strategy:
+        # As of 3.9.1, Python now fully supports building and running on macOS 11.0 (Big Sur) and on Apple Silicon Macs (based on the ARM64 architecture).
+        # https://docs.python.org/3/whatsnew/3.9.html
         matrix:
-          Python37:
-            PythonVersion: '3.7'
-          Python38:
-            PythonVersion: '3.8'
           Python39:
             PythonVersion: '3.9'
           Python310:
